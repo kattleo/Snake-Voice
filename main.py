@@ -3,13 +3,13 @@ from flask_socketio import SocketIO, emit
 import speech_recognition as sr
 import time
 
-app = Flask(__name__, static_folder='static/assets', template_folder='static')
+app = Flask(__name__, static_folder='static', static_url_path='/')
 socketio = SocketIO(app)
 
 @app.route('/')
 def index():
     # Serve the Snake Game HTML
-    return send_from_directory('static', 'index.html')
+    return app.send_static_file('index.html')
 
 
 @app.route('/command', methods=['POST'])
