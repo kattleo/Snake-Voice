@@ -11,7 +11,6 @@ def index():
     # Serve the Snake Game HTML
     return app.send_static_file('index.html')
 
-
 @app.route('/command', methods=['POST'])
 def command():
     data = request.json
