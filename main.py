@@ -4,7 +4,7 @@ import speech_recognition as sr
 import time
 
 app = Flask(__name__, static_folder='static', static_url_path='/')
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 @app.route('/')
 def index():
