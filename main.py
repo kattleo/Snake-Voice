@@ -2,6 +2,7 @@ from flask import Flask, send_from_directory, request, jsonify
 from flask_socketio import SocketIO, emit
 import speech_recognition as sr
 import time
+import pyautogui
 
 app = Flask(__name__, static_folder='static', static_url_path='/')
 socketio = SocketIO(app, cors_allowed_origins="*")
