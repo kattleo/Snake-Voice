@@ -106,33 +106,6 @@
 
     <script src="index.js"></script>
 
-    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
-    <script>
-      const socket = io("http://localhost:5000");
-
-      const commandToKeyMap = {
-        up: "ArrowUp",
-        down: "ArrowDown",
-        left: "ArrowLeft",
-        right: "ArrowRight",
-      };
-
-      socket.on("command", (data) => {
-        const command = data.command;
-        console.log(`Command received: ${command}`);
-        simulateKeyInput(command);
-      });
-
-      function simulateKeyInput(command) {
-        const key = commandToKeyMap[command];
-        if (key) {
-          const event = new KeyboardEvent("keydown", { key: key });
-          document.dispatchEvent(event); // Dispatch the event to the document
-          console.log(`Simulated key input: ${key}`);
-        }
-      }
-    </script>
-
     <script>
       const GODOT_CONFIG = {
         args: [],

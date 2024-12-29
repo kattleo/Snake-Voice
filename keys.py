@@ -1,17 +1,17 @@
-import pyautogui
+import pydirectinput
 import time
 
 def keys():
     limit = 100
     time.sleep(5)
     for i in range(0, limit):
-        pyautogui.hotkey('up')
+        pydirectinput.press('up')
         time.sleep(0.2)
-        pyautogui.press('left')
+        pydirectinput.press('left')
         time.sleep(0.2)
-        pyautogui.press('down')
+        pydirectinput.press('down')
         time.sleep(0.2)
-        pyautogui.press('right')
+        pydirectinput.press('right')
         time.sleep(0.2)
 
 
